@@ -3,6 +3,8 @@ import express from "express";
 const app = express();
 import  Patient  from "../router/patient.route.js";
 import  Doctor  from "../router/doctor.route.js";
+import User from "../router/User.route.js"
+
 app.use(express.json({ limit: "16kb" }));
 app.use(express.urlencoded({ extended: true}));
 app.get("/",(req, res)=>{
@@ -13,6 +15,7 @@ app.get("/",(req, res)=>{
 })
 app.use("/patient", Patient);
 app.use("/doctor", Doctor);
+app.use("/user", User)
 export default app
 
 
